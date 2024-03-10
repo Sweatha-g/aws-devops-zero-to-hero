@@ -2,4 +2,5 @@
 set -e
 
 # Stop the running container (if any)
-echo "Hi"
+containerid=$(sudo docker ps | grep "simple-python-flask-app" | awk '{print $1}')
+sudo docker rm -f $containerid
